@@ -18,14 +18,12 @@ export class CvComponent {
       22,
       'rotating_card_profile2.png'
     ),
-    new Cv(
-      2,
-      'codet',
-      'Marie',
-      'Dev',
-      '1234',
-      20,
-      'rotating_card_profile.png'
-    ),
+    new Cv(2, 'codet', 'Marie', 'Dev', '1234', 20, 'rotating_card_profile.png'),
   ];
+
+  selectedCv: Cv | null = null;
+
+  onForwardCv(cv: Cv): void {
+    this.selectedCv = cv;
+  }
 }
