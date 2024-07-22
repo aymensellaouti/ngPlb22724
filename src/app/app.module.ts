@@ -11,6 +11,10 @@ import { TwoComponent } from './components/two/two.component';
 import { RotatingCardComponent } from './components/rotating-card/rotating-card.component';
 import { PereComponent } from './components/pere/pere.component';
 import { FilsComponent } from './components/fils/fils.component';
+import { CvComponent } from './cv/cv/cv.component';
+import { ListComponent } from './cv/list/list.component';
+import { ItemComponent } from './cv/item/item.component';
+import { CvCardComponent } from './cv/cv-card/cv-card.component';
 // On est entrain de définir le contexte de compilation
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { FilsComponent } from './components/fils/fils.component';
     TwoComponent,
     RotatingCardComponent,
     PereComponent,
-    FilsComponent
+    FilsComponent,
+    CvComponent,
+    ListComponent,
+    ItemComponent,
+    CvCardComponent
   ],
   imports: [
     BrowserModule,
