@@ -16,6 +16,7 @@ import { ListComponent } from './cv/list/list.component';
 import { ItemComponent } from './cv/item/item.component';
 import { CvCardComponent } from './cv/cv-card/cv-card.component';
 import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
+import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 // On est entrain de définir le contexte de compilation
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
     ListComponent,
     ItemComponent,
     CvCardComponent,
-    NgstyleComponent
+    NgstyleComponent,
+    MiniWordComponent
   ],
   imports: [
     BrowserModule,
