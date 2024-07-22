@@ -1,0 +1,23 @@
+<p [hidden]="isHidden">first works!</p>
+<button (click)="showHide()"> Show / Hide</button>
+
+<input #monInput (change)="updateMessage(monInput.value)" class="form-group" type="text">
+
+<p>
+  Le contenu de mon input est : {{ message }}
+</p>
+
+<div class="alert alert-secondary">
+  <app-second/>
+</div>
+
+
+
+
+
+
+<!-- Ici c'est du HTML c'est des balises  -->
+
+<!-- on a des attributs => état de la balise -->
+
+<!-- événements => comportement  -->
