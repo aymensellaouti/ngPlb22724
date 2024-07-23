@@ -35,7 +35,7 @@ export class TodoService {
    * @returns boolean
    */
   deleteTodo(todo: Todo): boolean {
-
+    return true;
   }
 
   /**
