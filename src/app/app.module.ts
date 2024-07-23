@@ -31,6 +31,7 @@ import { LoggerService } from './services/logger.service';
 import { TodoComponent } from './todo/todo/todo.component';
 import { WeekTodosComponent } from './todo/week-todos/week-todos.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 // On est entrain de définir le contexte de compilation
@@ -57,7 +58,8 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
     DefaultImagePipe,
     TodoComponent,
     WeekTodosComponent,
-    EmbaucheComponent
+    EmbaucheComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
