@@ -1,13 +1,13 @@
-import { Inject, Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { Todo } from "../model/todo";
+import { LoggerService } from "src/app/services/logger.service";
 
 @Injectable({
   providedIn: "root",
 })
 export class TodoService {
-  private todos: Todo[] = [];
-  constructor(
-  ) {}
+  #todos: Todo[] = [];
+  loggerService = inject(LoggerService);
 
   /**
    * elle retourne la liste des todos
@@ -15,7 +15,7 @@ export class TodoService {
    * @returns Todo[]
    */
   getTodos(): Todo[] {
-    return [];
+    return this.#todos;
   }
 
   /**
@@ -25,7 +25,12 @@ export class TodoService {
    *
    */
   addTodo(todo: Todo): void {
-
+    if (this.#todos.length) {
+      todo.id = this.#todos[this.#todos.length - 1].id + 1;
+    } else {
+      todo.id = 1;
+    }
+    this.#todos.push(todo);
   }
 
   /**
@@ -35,13 +40,19 @@ export class TodoService {
    * @returns boolean
    */
   deleteTodo(todo: Todo): boolean {
-    return true;
+    const index = this.#todos.indexOf(todo);
+    if (index != -1) {
+      this.#todos.splice(index, 1);
+      return true;
+    }
+    return false;
   }
 
   /**
    * Logger la liste des todos
+   * @returns void
    */
   logTodos() {
-
+    this.loggerService.logger(this.#todos);
   }
 }
