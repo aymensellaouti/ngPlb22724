@@ -1,4 +1,9 @@
+
+<input type="text" appRainbow>
+<input type="color" appRainbow>
+
 <div
+  appRainbow
   (click)="interrupteur()"
   [ngClass]="{
     'eteinte': isOff,
@@ -6,6 +11,6 @@
   }"
   class="lampe">lampe </div>
 
-  <p appHighlight>test</p>
+  <p appHighlight appRainbow>test</p>
   <p [in]="'pink'" [out]="'gold'" appHighlight>test</p>
   <p [in]="'lightblue'" [out]="'green'" appHighlight>test</p>

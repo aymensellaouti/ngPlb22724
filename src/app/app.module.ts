@@ -20,6 +20,7 @@ import { MiniWordComponent } from './directives/mini-word/mini-word.component';
 import { SommmeComponent } from './components/sommme/sommme.component';
 import { LampeComponent } from './directives/lampe/lampe.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { RainbowDirective } from './directives/rainbow.directive';
 // On est entrain de définir le contexte de compilation
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     MiniWordComponent,
     SommmeComponent,
     LampeComponent,
-    HighlightDirective
+    HighlightDirective,
+    RainbowDirective
   ],
   imports: [
     BrowserModule,
