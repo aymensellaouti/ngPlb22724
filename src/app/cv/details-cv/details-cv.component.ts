@@ -1,19 +1,30 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, inject, OnInit } from "@angular/core";
 import { Cv } from "../model/cv.model";
+import { CvService } from "../services/cv.service";
+import { ActivatedRoute, Router } from "@angular/router";
+import { APP_ROUTES } from "src/app/config/routes.config";
 
 
 @Component({
-  selector: "app-details-cv",
-  templateUrl: "./details-cv.component.html",
-  styleUrls: ["./details-cv.component.css"],
+  selector: 'app-details-cv',
+  templateUrl: './details-cv.component.html',
+  styleUrls: ['./details-cv.component.css'],
 })
-export class DetailsCvComponent implements OnInit {
+export class DetailsCvComponent {
   cv: Cv | null = null;
-  constructor(
+  cvService = inject(CvService);
+  acr = inject(ActivatedRoute);
+  router = inject(Router);
+  constructor() {
+    const id = this.acr.snapshot.params['id'];
+    this.cv = this.cvService.findCvById(id);
+    if (!this.cv) this.router.navigate([APP_ROUTES.cv]);
+  }
 
-  ) {}
-
-  ngOnInit() {
-
+  deleteCv() {
+    if (this.cv) {
+      this.cvService.deleteCv(this.cv)
+      this.router.navigate([APP_ROUTES.cv]);
+    }
   }
 }

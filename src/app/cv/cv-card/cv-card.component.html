@@ -52,8 +52,11 @@
           </div>
           <div class="footer">
             <div class="social-links text-center">
-              <button (click)="embaucher()" class="btn btn-primary">
+              <button (click)="embaucher()" class="btn btn-primary m-1">
                 embaucher
+              </button>
+              <button [routerLink]="['/cv', cv.id]" class="btn btn-dark m-1">
+                détails,
               </button>
             </div>
           </div>
