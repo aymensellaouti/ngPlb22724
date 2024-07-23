@@ -32,6 +32,8 @@ import { TodoComponent } from './todo/todo/todo.component';
 import { WeekTodosComponent } from './todo/week-todos/week-todos.component';
 import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { Nf404Component } from './components/nf404/nf404.component';
+import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 
 
 // On est entrain de définir le contexte de compilation
@@ -59,7 +61,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TodoComponent,
     WeekTodosComponent,
     EmbaucheComponent,
-    NavbarComponent
+    NavbarComponent,
+    Nf404Component,
+    DetailsCvComponent
   ],
   imports: [
     BrowserModule,
