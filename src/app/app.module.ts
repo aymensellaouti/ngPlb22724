@@ -17,6 +17,9 @@ import { ItemComponent } from './cv/item/item.component';
 import { CvCardComponent } from './cv/cv-card/cv-card.component';
 import { NgstyleComponent } from './directives/ngstyle/ngstyle.component';
 import { MiniWordComponent } from './directives/mini-word/mini-word.component';
+import { SommmeComponent } from './components/sommme/sommme.component';
+import { LampeComponent } from './directives/lampe/lampe.component';
+import { HighlightDirective } from './directives/highlight.directive';
 // On est entrain de définir le contexte de compilation
 @NgModule({
   declarations: [
@@ -33,7 +36,10 @@ import { MiniWordComponent } from './directives/mini-word/mini-word.component';
     ItemComponent,
     CvCardComponent,
     NgstyleComponent,
-    MiniWordComponent
+    MiniWordComponent,
+    SommmeComponent,
+    LampeComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

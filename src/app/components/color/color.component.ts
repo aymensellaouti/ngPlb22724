@@ -6,9 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./color.component.css'],
 })
 export class ColorComponent {
-
   #defaultColor = 'red';
-
   // propriété d'état qui va représenter la couleur du background de la DIV
   color = 'red';
 
