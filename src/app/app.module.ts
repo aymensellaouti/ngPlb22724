@@ -22,6 +22,8 @@ import { LampeComponent } from './directives/lampe/lampe.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
 import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
+import { LoggerService } from './services/logger.service';
+import { TodoComponent } from './todo/todo/todo.component';
 // On est entrain de définir le contexte de compilation
 @NgModule({
   declarations: [
@@ -43,14 +45,18 @@ import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
     LampeComponent,
     HighlightDirective,
     RainbowDirective,
-    DefaultImagePipe
+    DefaultImagePipe,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [
+    // LoggerService,
+    // Voila ce que j'offre en tant que framework : (C'est mon menu)
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
