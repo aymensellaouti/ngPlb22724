@@ -4,14 +4,17 @@ import { Cv } from '../model/cv.model';
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.css']
+  styleUrls: ['./item.component.css'],
 })
 export class ItemComponent {
   // état de mon composant
   @Input({
-    required: true
+    required: true,
   })
   cv!: Cv;
+  @Input()
+  size = 50;
+
   @Output()
   selectCv = new EventEmitter<Cv>();
 
