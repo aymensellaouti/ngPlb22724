@@ -8,6 +8,7 @@ import { TodoService } from "../service/todo.service";
   selector: "app-todo",
   templateUrl: "./todo.component.html",
   styleUrls: ["./todo.component.css"],
+  providers: [TodoService]
 })
 export class TodoComponent {
   /**
@@ -30,8 +31,8 @@ export class TodoComponent {
     this.todo = new Todo();
   }
 
-  deleteTodo(todo: Todo) {
-    this.todoService.deleteTodo(todo);
+  deleteTodo(index: number) {
+    this.todoService.deleteTodo(index);
   }
 
 

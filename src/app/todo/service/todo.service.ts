@@ -39,8 +39,8 @@ export class TodoService {
    * @param todo: Todo
    * @returns boolean
    */
-  deleteTodo(todo: Todo): boolean {
-    const index = this.#todos.indexOf(todo);
+  deleteTodo(index: number): boolean {
+    // const index = this.#todos.indexOf(todo);
     if (index != -1) {
       this.#todos.splice(index, 1);
       return true;

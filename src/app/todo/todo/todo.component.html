@@ -2,11 +2,11 @@
   <div class="col">
     <ol class="list-group">
       <li
-        *ngFor="let todo of todos"
+        *ngFor="let todo of todos; let i = index"
         class="list-group-item">
         {{todo.name}} : {{todo.content}}
         <i
-          (click)="deleteTodo(todo)"
+          (click)="deleteTodo(i)"
           class="bi bi-trash2"></i>
       </li>
     </ol>
@@ -24,3 +24,4 @@
     </button>
   </div>
 </div>
+<!-- <app-cv /> -->

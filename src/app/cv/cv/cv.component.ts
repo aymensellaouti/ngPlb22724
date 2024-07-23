@@ -1,12 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Cv } from '../model/cv.model';
 import { LoggerService } from 'src/app/services/logger.service';
 import { SayHelloService } from 'src/app/services/say-hello.service';
+import { TodoService } from 'src/app/todo/service/todo.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-cv',
   templateUrl: './cv.component.html',
   styleUrls: ['./cv.component.css'],
+  providers:  []
 })
 export class CvComponent {
   today = new Date();
@@ -17,7 +20,8 @@ export class CvComponent {
   ];
   // sayHelloService = new SayHelloService();
   selectedCv: Cv | null = null;
-
+  todoService = inject(TodoService);
+  toastr = inject(ToastrService);
   // Voila ce que je commande (Injection de dépendance)
   constructor(
     private loggerService: LoggerService,
@@ -25,8 +29,10 @@ export class CvComponent {
   ) {
     this.sayHelloService.hello();
     this.loggerService.logger('cc je suis le cvComponent');
+    this.toastr.info('Bienvenu dans notre CvTech :D');
   }
   onForwardCv(cv: Cv): void {
     this.selectedCv = cv;
+    this.todoService.logTodos();
   }
 }
