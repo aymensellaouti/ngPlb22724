@@ -7,6 +7,7 @@ import { Cv } from '../model/cv.model';
   styleUrls: ['./cv.component.css'],
 })
 export class CvComponent {
+  today = new Date();
   // Crée la liste des cvs
   cvs: Cv[] = [
     new Cv(
@@ -16,7 +17,7 @@ export class CvComponent {
       'Dev',
       '123',
       22,
-      'rotating_card_profile2.png'
+      '    '
     ),
     new Cv(2, 'codet', 'Marie', 'Dev', '1234', 20, 'rotating_card_profile.png'),
   ];

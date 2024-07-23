@@ -21,6 +21,7 @@ import { SommmeComponent } from './components/sommme/sommme.component';
 import { LampeComponent } from './directives/lampe/lampe.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { RainbowDirective } from './directives/rainbow.directive';
+import { DefaultImagePipe } from './cv/pipes/default-image.pipe';
 // On est entrain de définir le contexte de compilation
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { RainbowDirective } from './directives/rainbow.directive';
     SommmeComponent,
     LampeComponent,
     HighlightDirective,
-    RainbowDirective
+    RainbowDirective,
+    DefaultImagePipe
   ],
   imports: [
     BrowserModule,

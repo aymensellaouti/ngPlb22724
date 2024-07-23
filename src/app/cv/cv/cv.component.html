@@ -1,6 +1,11 @@
 <div class="row">
   <!-- appList(cvs) -->
-  <div class="col"><app-list (forwardCv)="onForwardCv($event)" [cvs]="cvs"/></div>
+  <div class="col">
+    <div class="alert alert-warning">
+      {{ today | date: 'full' | uppercase}}
+    </div>
+
+    <app-list (forwardCv)="onForwardCv($event)" [cvs]="cvs"/></div>
   <!-- appCvCard(selectedCv) -->
   <div class="col"><app-cv-card [cv]="selectedCv"/></div>
 </div>
