@@ -56,12 +56,25 @@ export class CvService {
 
   /**
    *
+   * Supprime un cv s'il le trouve depuis l'api
+   *
+   * @param id : number
+   * @returns {count: number}
+   */
+  deleteCv(id: number): Observable<{count: number}> {
+        // Todo : Récupérer le Token et l'injecter soit en
+        // HttpParams ou en HttpHeaders
+        return this.http.delete<{ count: number }>(APP_API.cv + id);
+  }
+
+  /**
+   *
    * Supprime un cv s'il le trouve
    *
    * @param cv : Cv
    * @returns boolean
    */
-  deleteCv(cv: Cv): boolean {
+  deleteFakeCv(cv: Cv): boolean {
     const index = this.#cvs.indexOf(cv);
     if (index > -1) {
       this.#cvs.splice(index, 1);
