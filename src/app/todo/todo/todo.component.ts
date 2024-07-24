@@ -1,8 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { Todo } from "../model/todo";
 import { TodoService } from "../service/todo.service";
-
-
+import { TestHttpService } from "src/app/services/test-http.service";
 
 @Component({
   selector: "app-todo",
@@ -21,9 +20,12 @@ export class TodoComponent {
   todo = new Todo();
 
   todoService = inject(TodoService);
-
+  testHttpService = inject(TestHttpService);
   constructor() {
     this.todos = this.todoService.getTodos();
+    this.testHttpService.getTodos().subscribe(
+      (todos) => console.log(todos)
+    )
   }
 
   addTodo() {
