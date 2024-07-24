@@ -34,6 +34,8 @@ import { EmbaucheComponent } from './cv/embauche/embauche.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { Nf404Component } from './components/nf404/nf404.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
+import { TestFormComponent } from './formulaires/test-form/test-form.component';
+import { LoginComponent } from './auth/login/login.component';
 
 
 // On est entrain de définir le contexte de compilation
@@ -63,7 +65,9 @@ import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
     EmbaucheComponent,
     NavbarComponent,
     Nf404Component,
-    DetailsCvComponent
+    DetailsCvComponent,
+    TestFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

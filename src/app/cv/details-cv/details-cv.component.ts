@@ -16,8 +16,10 @@ export class DetailsCvComponent {
   acr = inject(ActivatedRoute);
   router = inject(Router);
   constructor() {
+    // On récupére l'id de la route à travers le activatedRoute
     const id = this.acr.snapshot.params['id'];
     this.cv = this.cvService.findCvById(id);
+    // Si l'id ne correspond à aucun cv on redirige notre user vers la liste des cvs
     if (!this.cv) this.router.navigate([APP_ROUTES.cv]);
   }
 
