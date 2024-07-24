@@ -10,19 +10,21 @@ import { Nf404Component } from './components/nf404/nf404.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { LoginComponent } from './auth/login/login.component';
 import { AddCvComponent } from './cv/add-cv/add-cv.component';
+import { authGuard } from './auth/guards/auth.guard';
+import { canLeaveGuard } from './guards/can-leave.guard';
 
 const routes: Routes = [
   // 'cv'
-  { path: '', component: FirstComponent},
-  { path: 'cv', component: CvComponent},
-  { path: 'cv/add', component: AddCvComponent},
-  { path: 'cv/:id', component: DetailsCvComponent},
-  { path: 'todo', component: TodoComponent},
-  { path: 'color', component: ColorComponent},
-  { path: 'word', component: MiniWordComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'second/:quelqueChose/:autreTruc', component: SecondComponent},
-  { path: '**', component: Nf404Component},
+  { path: '', component: FirstComponent },
+  { path: 'cv', component: CvComponent },
+  { path: 'cv/add', component: AddCvComponent, canActivate: [authGuard] },
+  { path: 'cv/:id', component: DetailsCvComponent },
+  { path: 'todo', component: TodoComponent, canDeactivate: [canLeaveGuard] },
+  { path: 'color', component: ColorComponent },
+  { path: 'word', component: MiniWordComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'second/:quelqueChose/:autreTruc', component: SecondComponent },
+  { path: '**', component: Nf404Component },
 ];
 
 @NgModule({
