@@ -28,7 +28,13 @@ export class CvComponent {
     private loggerService: LoggerService,
     private sayHelloService: SayHelloService
   ) {
-    this.cvs = this.cvService.getCvs();
+    this.cvService.getCvs().subscribe({
+      next: (cvs) => this.cvs = cvs,
+      error: (e) => {
+        this.cvs = this.cvService.getFakeCvs();
+        this.toastr.error(`Les données sont fictives, veuillez contacter l'admin`);
+      }
+  });
     this.sayHelloService.hello();
     this.loggerService.logger('cc je suis le cvComponent');
     this.toastr.info('Bienvenu dans notre CvTech :D');

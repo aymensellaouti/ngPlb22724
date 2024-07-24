@@ -1,6 +1,8 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Cv } from '../model/cv.model';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { APP_API } from 'src/app/config/api.config';
 
 @Injectable({
   providedIn: 'root',
@@ -15,9 +17,29 @@ export class CvService {
   #selectedCvSubject = new Subject<Cv>();
   // Définir le flux visible des Cv Sélectionné
   selectCv$ = this.#selectedCvSubject.asObservable();
+  http = inject(HttpClient);
   constructor() {}
 
-  getCvs(): Cv[] {
+  /**
+   * Retourne l'observable des cvs retournée par l'API
+   * @returns Observable<Cv[]>
+   */
+  getCvs(): Observable<Cv[]> {
+    return this.http.get<Cv[]>(APP_API.cv);
+  }
+
+  /**
+   *
+   * Cherche un cv avec son id dans l'api
+   *
+   * @param id
+   * @returns Observable<Cv>
+   */
+  getCvById(id: number): Observable<Cv> {
+    return this.http.get<Cv>(APP_API.cv + id);
+  }
+
+  getFakeCvs(): Cv[] {
     return this.#cvs;
   }
 

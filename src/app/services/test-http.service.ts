@@ -16,7 +16,8 @@ export class TestHttpService {
   http = inject(HttpClient);
 
   getTodos(): Observable<TodoApi[]> {
-    return this.http.get<TodoApi[]>('https://jsonplaceholder.typicode.com/todos')
+    return this.http.get<TodoApi[]>
+    ('https://jsonplaceholder.typicode.com/todos')
     // .pipe(
     //   shareReplay(1)
     // );
