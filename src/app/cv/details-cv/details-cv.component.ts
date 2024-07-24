@@ -3,6 +3,7 @@ import { Cv } from "../model/cv.model";
 import { CvService } from "../services/cv.service";
 import { ActivatedRoute, Router } from "@angular/router";
 import { APP_ROUTES } from "src/app/config/routes.config";
+import { AuthService } from "src/app/auth/services/auth.service";
 
 
 @Component({
@@ -15,6 +16,7 @@ export class DetailsCvComponent {
   cvService = inject(CvService);
   acr = inject(ActivatedRoute);
   router = inject(Router);
+  authService = inject(AuthService);
   constructor() {
     // On récupére l'id de la route à travers le activatedRoute
     const id = this.acr.snapshot.params['id'];

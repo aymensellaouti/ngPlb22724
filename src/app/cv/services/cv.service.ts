@@ -68,11 +68,8 @@ export class CvService {
         //   'access_token',
         //   localStorage.getItem('token') ?? ''
         // );
-        const headers = new HttpHeaders().set(
-          'authorization',
-          localStorage.getItem('token') ?? ''
-        );
-        return this.http.delete<{ count: number }>(APP_API.cv + id, { headers });
+
+        return this.http.delete<{ count: number }>(APP_API.cv + id);
   }
 
   /**
