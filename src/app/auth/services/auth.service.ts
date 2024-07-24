@@ -15,4 +15,10 @@ export class AuthService {
     // Todo: Appeler l'api avec les credentials et retourner un observable
     return this.http.post<LoginResonse>(APP_API.login, credentials);
   }
+
+  logout() {}
+
+  isAuthenticated(): boolean {
+    return true;
+  }
 }
