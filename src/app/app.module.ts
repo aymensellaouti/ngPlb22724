@@ -36,6 +36,7 @@ import { Nf404Component } from './components/nf404/nf404.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 import { TestFormComponent } from './formulaires/test-form/test-form.component';
 import { LoginComponent } from './auth/login/login.component';
+import { TestObservableComponent } from './rxjs/test-observable/test-observable.component';
 
 
 // On est entrain de définir le contexte de compilation
@@ -67,7 +68,8 @@ import { LoginComponent } from './auth/login/login.component';
     Nf404Component,
     DetailsCvComponent,
     TestFormComponent,
-    LoginComponent
+    LoginComponent,
+    TestObservableComponent
   ],
   imports: [
     BrowserModule,

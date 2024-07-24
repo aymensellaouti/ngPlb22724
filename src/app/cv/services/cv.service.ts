@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Cv } from '../model/cv.model';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +10,11 @@ export class CvService {
     new Cv(1, 'lepauvre', 'Martial', 'Dev', '123', 22, '    '),
     new Cv(2, 'codet', 'Marie', 'Dev', '1234', 20, 'rotating_card_profile.png'),
   ];
+
+  // C'est le flux des cv sélectionnés Cv1 Cv2 Cv3 Cv2 Cv3 Cv3 Cv1 ....
+  #selectedCvSubject = new Subject<Cv>();
+  // Définir le flux visible des Cv Sélectionné
+  selectCv$ = this.#selectedCvSubject.asObservable();
   constructor() {}
 
   getCvs(): Cv[] {
@@ -40,5 +46,10 @@ export class CvService {
       return true;
     }
     return false;
+  }
+
+  selectCv(cv: Cv) {
+    // J'ajoute un cv dans le flux
+    this.#selectedCvSubject.next(cv);
   }
 }

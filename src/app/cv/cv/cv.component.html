@@ -5,8 +5,8 @@
       {{ today | date: 'full' | uppercase}}
     </div>
 
-    <app-list (forwardCv)="onForwardCv($event)" [cvs]="cvs"/></div>
+    <app-list [cvs]="cvs"/></div>
   <!-- appCvCard(selectedCv) -->
-  <div class="col"><app-cv-card [cv]="selectedCv"/></div>
+  <div class="col"><app-cv-card [cv]="selectedCv$ | async"/></div>
 </div>
 <app-embauche />
